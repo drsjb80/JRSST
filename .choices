@@ -1,0 +1,5 @@
+java -Xmx800m -jar ~/src/JRSST/JRSST-*[0-9].jar --lowerright --quick_init --undecorated=TRUE --fix_html --init=file:/Users/beaty-admin/Dropbox/jrsst &
+open http://sourceforge.net/p/jrsst/code/
+cvs -qn commit # which files have been modified?
+----
+jconsole
