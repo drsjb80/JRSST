@@ -1,0 +1,4 @@
+export CVS_RSH=ssh
+export CVSROOT=":ext:drb80@jrsst.cvs.sourceforge.net:/cvsroot/jrsst"
+# cd src
+# cvs import -m "Initial import" . drb80 start
