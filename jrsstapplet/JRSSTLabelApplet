@@ -1,0 +1,17 @@
+<html>
+<head>
+<title>JRSST applet</title>
+</head>
+<body>
+<!-- http://www.w3.org/TR/REC-html40/struct/objects.html#h-13.4 -->
+<applet
+    codebase	= "CODEBASE"
+    archive	= "JRSST-VERSION.signed.jar"
+    code	= "edu.mscd.cs.jrsstlabel.JRSSTLabelApplet.class"
+    width=	400
+    height=	20
+>
+PARAMS
+</applet>
+</body>
+</html>

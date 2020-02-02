@@ -1,0 +1,10 @@
+// http://java.sun.com/j2se/1.4.2/docs/guide/security/PolicyFiles.html
+
+// it's "codebase" in html, "codeBase" here.  geez.
+grant codeBase "/home/beaty/src/JRSST/" {
+  permission java.util.PropertyPermission "java.net.preferIPv4Stack", "write";
+  permission java.util.PropertyPermission "http.agent", "write";
+  permission java.lang.reflect.ReflectPermission "suppressAccessChecks";
+  permission java.net.SocketPermission "newsrss.bbc.co.uk:80","connect,resolve";
+  permission java.net.SocketPermission "news.bbc.co.uk", "resolve";
+};

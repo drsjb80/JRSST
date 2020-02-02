@@ -1,0 +1,102 @@
+<html>
+<head>
+<title>JRSST Applets</title>
+<link rel="stylesheet" type="text/css" href="generic.css" title="generic">
+</head>
+<body>
+
+JRSST has an applet you can embed in html pages.  Here's
+<a href="http://emess.mscd.edu/~beaty/JRSSTLabelApplet.html">a
+demonstration</a> whose html is:
+
+<hr>
+<pre>
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;JRSST applet&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;applet
+    codebase    = "http://emess.mscd.edu/~beaty/"
+    archive     = "JRSST-VERSION.signed.jar"
+    code        = "edu.mscd.cs.jrsstlabel.JRSSTLabelApplet.class"
+    width=      400
+    height=     20
+&gt;
+&lt;/applet&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<hr>
+
+You'll have to trust me when the verification window pops up -- something
+you can do in this case.  You'll now have a running JRSST applet on the
+page.  You can add parameters for which sites to display by passing a
+parameter named "args":
+
+<hr>
+<pre>
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;JRSST applet&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;applet
+    codebase	= "http://emess.mscd.edu/~beaty/"
+    archive	= "JRSST-VERSION.signed.jar"
+    code	= "edu.mscd.cs.jrsstlabel.JRSSTLabelApplet.class"
+    width=	400
+    height=	20
+&gt;
+   &lt;param name="args" value="http://www.nws.noaa.gov/data/current_obs/KDEN.rss http://rss.cnn.com/rss/cnn_topstories.rss"&gt;
+&lt;/applet&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<hr>
+
+The applet doesn't really need all the permissions it gets by default.
+Indeed, in the demo mode, this policy file is sufficient:
+
+<hr>
+<pre>
+grant codeBase "http://emess.mscd.edu/~beaty/" {
+  permission java.util.PropertyPermission "java.net.preferIPv4Stack", "write";
+  permission java.util.PropertyPermission "http.agent", "write";
+  permission java.lang.reflect.ReflectPermission "suppressAccessChecks";
+  permission java.net.SocketPermission "newsrss.bbc.co.uk:80","connect,resolve";
+  permission java.net.SocketPermission "news.bbc.co.uk", "resolve";
+};
+</pre>
+<hr>
+
+If you're uncomfortable granting the applet all permissions, and i might
+be, add this rule to your home directory's .java.policy file and restart
+your browser.  Then you won't need to trust the applet and you know exactly
+what it will be doing.  I'd like to be able to associate a policy with an
+applet tag or with a jar file, but that doesn't seem possible...
+
+<p>Here's the Java Web Start specification:
+<hr>
+<pre>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;jnlp spec="1.0+" codebase="http://emess.mscd.edu/~beaty/"&gt;
+    &lt;information&gt;
+        &lt;title&gt;JRSST: A Java RSS and Atom Ticker/Aggregator/Reader&lt;/title&gt;
+        &lt;description&gt&gt;Demonstration of JRSST&lt;/description>
+	&lt;vendor&gt;Steve Beaty&lt;/vendor&gt;
+    &lt;/information&gt;
+    &lt;security&gt;
+        &lt;all-permissions/&gt;
+    &lt;/security&gt;
+    &lt;resources&gt;
+        &lt;j2se version="1.2+" /&gt;
+        &lt;jar href="JRSST-VERSION.signed.jar"/&gt;
+    &lt;/resources&gt;
+    &lt;application-desc main-class="JRSST"/&gt;
+&lt;/jnlp&gt;
+</pre>
+<hr>
+
+</body>
+</html>
