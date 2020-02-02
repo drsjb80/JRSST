@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jnlp spec="1.0+" codebase="CODEBASE">
+    <information>
+        <title>JRSST: A Java RSS and Atom Ticker/Aggregator/Reader</title>
+        <description>Demonstration of JRSST</description>
+	<vendor>Steve Beaty</vendor>
+    </information>
+    <security>
+        <all-permissions/>
+    </security>
+    <resources>
+        <j2se version="1.2+" />
+        <jar href="JRSST-VERSION.signed.jar"/>
+    </resources>
+    <application-desc main-class="JRSST"/>
+</jnlp>
