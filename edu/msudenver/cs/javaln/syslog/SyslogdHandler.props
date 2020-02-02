@@ -1,0 +1,9 @@
+# -Djava.util.logging.config.file=UNIXDomainHandler.props
+
+.level = FINEST
+handlers = edu.mscd.cs.javaln.syslog.SyslogdHandler
+edu.mscd.cs.javaln.syslog.SyslogdHandler.level = FINEST
+edu.mscd.cs.javaln.syslog.SyslogdHandler.host = emess.mscd.edu
+edu.mscd.cs.javaln.syslog.SyslogdHandler.port = 514
+edu.mscd.cs.javaln.syslog.SyslogdHandler.formatter = \
+	edu.mscd.cs.javaln.syslog.SyslogdFormatter

@@ -1,0 +1,12 @@
+sudo mkdir /var/www/etc
+sudo mkdir /var/www/etc/nagiosql
+sudo mkdir /var/www/etc/nagiosql
+sudo mkdir /var/www/etc/nagiosql/import
+sudo mkdir /var/www/etc/nagiosql/hosts
+sudo mkdir /var/www/etc/nagiosql/services
+sudo mkdir /var/www/etc/nagiosql/backup
+sudo mkdir /var/www/etc/nagiosql/backup/hosts
+sudo mkdir /var/www/etc/nagiosql/backup/services
+sudo chown -R apache.nagios /var/www/etc/nagiosql
+sudo find /var/www/etc/nagiosql -type d -exec chmod 6775 '{}' ';'
+sudo find /var/www/etc/nagiosql -type f -exec chmod 664 '{}' ';'
