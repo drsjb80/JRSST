@@ -1,0 +1,14 @@
+<launch4jConfig>
+  <headerType>gui</headerType>
+  <jar>../JRSST-VERSION.jar</jar>
+  <outfile>OUTFILE</outfile>
+  <errTitle>JRSST</errTitle>
+  <customProcName>true</customProcName>
+  <supportUrl>http://jrsst.sourceforge.net/</supportUrl>
+  <priority>idle</priority>
+  <icon>../sst45.ico</icon>
+  <jre>
+    <minVersion>1.2.0</minVersion>
+    <!-- <opt>-Djava.util.logging.config.file=all.finest</opt> -->
+  </jre>
+</launch4jConfig>
