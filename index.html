@@ -1,0 +1,183 @@
+<html>
+<head>
+<title>JRSST: A Java RSS and Atom Ticker/Aggregator/Reader</title>
+<style type="text/css">
+    @media screen, print
+	{ body { font-family : sans-serif; text-align : justify } }
+    @media print
+	{ body { font-size : 12pt } table { font-size : 12pt } }
+    h1, h2, h3
+	{ font-family : sans-serif; text-align : center; }
+    A {text-decoration : none}
+</style>
+</head>
+<body>
+
+<table width="100%">
+<tr>
+<td align=center>
+    <h2>JRSST: A Java RSS and Atom Ticker/Aggregator/Reader</h2>
+    <img alt="example of JRSST" src=animation.gif>
+</td>
+<td align=center><img alt="from http://www.concordesst.com/" src=sst.gif></td>
+</tr>
+</table>
+
+<p>This is a simple, lightweight, RSS ticker/aggregator/reader.  I had
+checked out a number of tickers that look pretty as they scroll etc., but
+took a lot of CPU cycles and cost money.  I wanted a simple, OS independent
+ticker so I wrote this one in Java.  JRSST read RSS 0.91, 1.0, 2.0, and Atom
+feeds.  A jar file containing both the .class bytecode files and the source
+files and a Windows executable built with launch4j can be downloaded from: 
+<a href="http://sourceforge.net/projects/jrsst/">
+http://sourceforge.net/projects/jrsst/</a>.  Executables for various
+platforms are also available there.
+To use, do:
+
+<p><code>java -jar JRSST-2.2.3.jar [args] [URL...]</code> where URL... is
+the list of RSS URLs to display.  If no URLs are given, a RSS feed of the
+BBC world news is shown.
+
+<p>Specific instructions for creating a Windows shortcut to make launching
+easier can be found <a href="windows.html">here</a>.
+
+<p>Command-line arguments:
+<table border>
+<tr><th>Long</th><th>Meaning</th></tr>
+<tr>
+    <td><code>--init=URL</code>
+    <td>Read the specified JRSST initialization file.</td>
+</tr>
+<tr>
+    <td><code>--opml=URL</code>
+    <td>Read an OPML reading list.</td>
+</tr>
+<tr>
+    <td><code>--pause=seconds</code></td>
+    <td>The time between changing the display from the default 10 seconds.</td>
+</tr>
+<tr>
+    <td><code>--verbose</code></td>
+    <td>Show site names as they are being read</td>
+</tr>
+<tr>
+    <td><code>--font=FONT</code></td>
+    <td>Set the font to FONT.</td>
+</tr>
+<tr>
+    <td><code>--font-size=SIZE</code></td>
+    <td>Set the font size to SIZE.</td>
+</tr>
+<tr>
+    <td><code>--font-style=STYLE</code></td>
+    <td>Set the font style to STYLE (currently PLAIN, BOLD, and ITALIC).</td>
+</tr>
+
+<tr>
+    <td><code>--version</code></td>
+    <td>Display the version number and exit.</td>
+</tr>
+
+<tr>
+    <td><code>--undecorated[=TRUE|FALSE]</code></td>
+    <td>Whether the frame is decorated by the operating system.</td>
+</tr>
+
+<tr>
+    <td><code>--growleft[=TRUE|FALSE]</code></td>
+    <td>Whether the windows grows to the left.</td>
+</tr>
+
+<tr>
+    <td><code>--upperright[=TRUE|FALSE]</code></td>
+    <td>Position the window at the upper right corner of the screen.</td>
+</tr>
+
+<tr>
+    <td><code>--lowerright[=TRUE|FALSE]</code></td>
+    <td>Position the window at the lower right corner of the screen.</td>
+</tr>
+
+<tr>
+    <td><code>--lowerleft[=TRUE|FALSE]</code></td>
+    <td>Position the window at the lower left corner of the screen.</td>
+</tr>
+
+<tr>
+    <td><code>--x=#</code></td>
+    <td>Position the window with an X coordinate of #.</td>
+</tr>
+
+<tr>
+    <td><code>--y=#</code></td>
+    <td>Position the window with an Y coordinate of #.</td>
+</tr>
+
+<tr>
+    <td><code>--do_nothing_on_close</code></td>
+    <td>ignore window close requests.</td>
+</tr>
+
+</table>
+
+<p>Example URL's include:<br>
+<ul>
+    <li><a href="http://rss.cnn.com/rss/cnn_topstories.rss">
+	http://rss.cnn.com/rss/cnn_topstories.rss</a><br>
+	<img src="linux.png">
+    <li>It handles non-roman character sets with ease:<br>
+	<a href="http://rss.xinhuanet.com/rss/native.xml">
+	http://rss.xinhuanet.com/rss/native.xml</a><br>
+	<img src="mac.png">
+    <li>Here's a "meta" feed of the JRSST project from sourceforge:<br>
+	<a href="http://sourceforge.net/export/rss2_projsummary.php?group_id=144756">
+	http://sourceforge.net/export/rss2_projsummary.php?group_id=144756</a><br>
+	<img src="meta.png">
+</ul>
+
+<p>More RSS feeds can be found at:
+<a href="http://www.syndic8.com/">http://www.syndic8.com/</a>
+
+<p>The title bar will display the current URL title.  A mouse click in the
+window should bring a browser up with the current item displayed.  For
+items that have a longer description, hovering over the window will display
+that.
+
+<p>You can create a configuration file by hand
+that contains your URL's.  The format of the file is
+simple, just a list of channels and their URL's:
+<pre>
+&lt;?xml version="1.0"?&gt;
+&lt;jrsst version="1.0"&gt;
+ &lt;channel&gt;
+  &lt;url&gt;http://www.nws.noaa.gov/data/current_obs/KDEN.rss&lt;/url&gt;
+ &lt;/channel&gt;
+ &lt;channel&gt;
+  &lt;url&gt;http://rss.cnn.com/rss/cnn_topstories.rss&lt;/url&gt;
+ &lt;/channel&gt;
+ &lt;channel&gt;
+  &lt;url&gt;http://sourceforge.net/export/rss2_projsummary.php?group_id=144756&lt;/url&gt;
+ &lt;/channel&gt;
+ &lt;channel&gt;
+  &lt;url&gt;http://beatys1.mscd.edu/~beaty/acm.rss&lt;/url&gt;
+ &lt;/channel&gt;
+&lt;/jrsst&gt;
+</pre>
+
+JRSST will automatically look for a .jrsst file in your home directory.
+For Windows, this will look something like:
+<code>C:\Documents and Settings\Steve.BEATY-88AC5C2C5\.jrsst</code>
+You can create one in Notepad, but when you save the file, make sure you
+put the file name in quotes: <code> ".jrsst"</code> so that Notepad will
+not append a .txt extension.
+
+You can also specify the location of a configuration file with the
+<code>--init=</code> command line option, and either a <code>http:</code> or a
+<code>file:</code> URL.  OPML files are also supported with the
+<code>--opml</code> command line option.
+
+<p>In progress: drag and dropping RSS feeds, and a configuration
+panel.
+
+</body>
+</html>
