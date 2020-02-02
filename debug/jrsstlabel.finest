@@ -1,0 +1,8 @@
+# -Djava.util.logging.config.file=debug/jrsstlabel.finest
+
+edu.mscd.cs.jrsstlabel.level = FINEST
+
+handlers = java.util.logging.ConsoleHandler
+java.util.logging.ConsoleHandler.level = FINEST
+java.util.logging.ConsoleHandler.formatter = \
+    edu.mscd.cs.javaln.LineNumberFormatter

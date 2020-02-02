@@ -1,0 +1,6 @@
+# -Djava.util.logging.config.file=debug/JRSSTConfig.finest
+
+edu.mscd.cs.jrsstlabel.JRSSTConfig.level = FINEST
+
+handlers = edu.mscd.cs.linenumberconsolehandler.LineNumberConsoleHandler
+edu.mscd.cs.linenumberconsolehandler.LineNumberConsoleHandler.level = FINEST

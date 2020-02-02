@@ -1,0 +1,6 @@
+# -Djava.util.logging.config.file=debug/xmlparse.finest
+
+edu.mscd.cs.xmlparse.XMLParse.level = FINEST
+
+handlers = edu.mscd.cs.linenumberconsolehandler.LineNumberConsoleHandler
+edu.mscd.cs.linenumberconsolehandler.LineNumberConsoleHandler.level = FINEST
