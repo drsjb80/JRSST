@@ -1,0 +1,30 @@
+#! /bin/bash -ex
+
+VERSION=`cat edu/mscd/cs/jrsstlabel/VERSION`
+V=`echo ${VERSION} | sed -e 's/\.//g'`
+
+FRS=`dig +short frs.sourceforge.net`
+WEB=`dig +short web.sourceforge.net`
+
+# sftp drb80@$FRS << ONE
+# cd uploads
+# put bin/JRSST-${VERSION}
+# put JRSST-${VERSION}.jar
+# put bin/JRSST${V}.exe
+# quit
+# ONE
+
+sftp drb80,jrsst@$WEB << TWO
+cd htdocs
+put index.html
+put windows.html
+put animation.gif
+put sst45.gif
+put sst.gif
+put linuxbig.png
+put linux.png
+put macbig.png
+put mac.png
+put meta.png
+put Properties.png
+TWO
