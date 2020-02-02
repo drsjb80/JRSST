@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<rdf:RDF
+ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+ xmlns="http://purl.org/rss/1.0/"
+ xmlns:taxo="http://purl.org/rss/1.0/modules/taxonomy/"
+ xmlns:dc="http://purl.org/dc/elements/1.1/"
+ xmlns:syn="http://purl.org/rss/1.0/modules/syndication/"
+ xmlns:admin="http://webns.net/mvcb/"
+>
+
+<channel rdf:about="http://www.us-cert.gov/cas/index.html">
+<title>US-CERT National Cyber Alert System</title>
+<link>http://www.us-cert.gov/cas/index.html</link>
+<description>The National Cyber Alert System provides timely
+information about current and emerging threats and vulnerabilities as
+well as advice about protecting your computer and
+networks.</description>
+<dc:language>en-us</dc:language>
+<dc:rights>Copyright 2004 Carnegie-Mellon University</dc:rights>
+<dc:date>2006-02-16T20:34:46+00:00</dc:date>
+<dc:creator>info@us-cert.gov</dc:creator>
+<items>
+ <rdf:Seq>
+  <rdf:li rdf:resource="http://www.us-cert.gov/cas/bulletins/SB06-047.html" />
+  <rdf:li rdf:resource="http://www.us-cert.gov/cas/alerts/SA06-045A.html" />
+  <rdf:li rdf:resource="http://www.us-cert.gov/cas/techalerts/TA06-045A.html" />
+  <rdf:li rdf:resource="http://www.us-cert.gov/cas/bulletins/SB06-040.html" />
+  <rdf:li rdf:resource="http://www.us-cert.gov/cas/techalerts/TA06-038A.html" />
+  <rdf:li rdf:resource="http://www.us-cert.gov/cas/alerts/SA06-038A.html" />
+  <rdf:li rdf:resource="http://www.us-cert.gov/cas/bulletins/SB06-033.html" />
+  <rdf:li rdf:resource="http://www.us-cert.gov/cas/alerts/SA06-032A.html" />
+  <rdf:li rdf:resource="http://www.us-cert.gov/cas/techalerts/TA06-032A.html" />
+  <rdf:li rdf:resource="http://www.us-cert.gov/cas/bulletins/SB06-026.html" />
+ </rdf:Seq>
+</items>
+</channel>
+
+<item rdf:about="http://www.us-cert.gov/cas/bulletins/SB06-047.html">
+<title>SB06-047: Summary of Security Items from February 9 through February 15, 2006</title>
+<link>http://www.us-cert.gov/cas/bulletins/SB06-047.html</link>
+<description>Summary of Security Items from February 9 through February 15, 2006</description>
+</item>
+
+<item rdf:about="http://www.us-cert.gov/cas/alerts/SA06-045A.html">
+<title>SA06-045A: Microsoft Windows, Windows Media Player, and Internet Explorer Vulnerabilities</title>
+<link>http://www.us-cert.gov/cas/alerts/SA06-045A.html</link>
+<description>Microsoft Windows, Windows Media Player, and Internet Explorer Vulnerabilities</description>
+</item>
+
+<item rdf:about="http://www.us-cert.gov/cas/techalerts/TA06-045A.html">
+<title>TA06-045A: Microsoft Windows, Windows Media Player, and Internet Explorer Vulnerabilities</title>
+<link>http://www.us-cert.gov/cas/techalerts/TA06-045A.html</link>
+<description>Microsoft Windows, Windows Media Player, and Internet Explorer Vulnerabilities</description>
+</item>
+
+<item rdf:about="http://www.us-cert.gov/cas/bulletins/SB06-040.html">
+<title>SB06-040: Summary of Security Items from February 2 through February 8, 2006</title>
+<link>http://www.us-cert.gov/cas/bulletins/SB06-040.html</link>
+<description>Summary of Security Items from February 2 through February 8, 2006</description>
+</item>
+
+<item rdf:about="http://www.us-cert.gov/cas/techalerts/TA06-038A.html">
+<title>TA06-038A: Multiple Vulnerabilities in Mozilla Products</title>
+<link>http://www.us-cert.gov/cas/techalerts/TA06-038A.html</link>
+<description>Multiple Vulnerabilities in Mozilla Products</description>
+</item>
+
+<item rdf:about="http://www.us-cert.gov/cas/alerts/SA06-038A.html">
+<title>SA06-038A: Multiple Vulnerabilities in Mozilla Products</title>
+<link>http://www.us-cert.gov/cas/alerts/SA06-038A.html</link>
+<description>Multiple Vulnerabilities in Mozilla Products</description>
+</item>
+
+<item rdf:about="http://www.us-cert.gov/cas/bulletins/SB06-033.html">
+<title>SB06-033: Summary of Security Items from January 26 through February 1, 2006</title>
+<link>http://www.us-cert.gov/cas/bulletins/SB06-033.html</link>
+<description>Summary of Security Items from January 26 through February 1, 2006</description>
+</item>
+
+<item rdf:about="http://www.us-cert.gov/cas/alerts/SA06-032A.html">
+<title>SA06-032A: Winamp Playlist Vulnerability</title>
+<link>http://www.us-cert.gov/cas/alerts/SA06-032A.html</link>
+<description>Winamp Playlist Vulnerability</description>
+</item>
+
+<item rdf:about="http://www.us-cert.gov/cas/techalerts/TA06-032A.html">
+<title>TA06-032A: Winamp Playlist Buffer Overflow</title>
+<link>http://www.us-cert.gov/cas/techalerts/TA06-032A.html</link>
+<description>Winamp Playlist Buffer Overflow</description>
+</item>
+
+<item rdf:about="http://www.us-cert.gov/cas/bulletins/SB06-026.html">
+<title>SB06-026: Summary of Security Items from January 19 through January 25, 2006</title>
+<link>http://www.us-cert.gov/cas/bulletins/SB06-026.html</link>
+<description>Summary of Security Items from January 19 through January 25, 2006</description>
+</item>
+
+</rdf:RDF>

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<jrsst version="1.0">
+ <channel>
+  <url>http://www.nws.noaa.gov/data/current_obs/KDEN.rss</url>
+ </channel>
+ <channel>
+  <url>http://rss.slashdot.org/Slashdot/slashdotApple</url>
+ </channel>
+</jrsst>

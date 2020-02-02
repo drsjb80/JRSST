@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://purl.org/rss/1.0/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/" xmlns:taxo="http://purl.org/rss/1.0/modules/taxonomy/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:syn="http://purl.org/rss/1.0/modules/syndication/" xmlns:admin="http://webns.net/mvcb/" xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0">
+  <channel rdf:about="http://slashdot.org/">
+    <title>Slashdot</title>
+    <link>http://slashdot.org/</link>
+    <description>News for nerds, stuff that matters</description>
+    <dc:language>en-us</dc:language>
+    <dc:rights>Copyright 1997-2005, OSTG - Open Source Technology Group, Inc.  All Rights Reserved.</dc:rights>
+    <dc:date>2006-01-12T21:11:10+00:00</dc:date>
+    <dc:publisher>OSTG</dc:publisher>
+    <dc:creator>pater@slashdot.org</dc:creator>
+    <dc:subject>Technology</dc:subject>
+    <syn:updatePeriod>hourly</syn:updatePeriod>
+    <syn:updateFrequency>1</syn:updateFrequency>
+    <syn:updateBase>1970-01-01T00:00+00:00</syn:updateBase>
+    <items>
+      <rdf:Seq>
+        <rdf:li rdf:resource="http://it.slashdot.org/article.pl?sid=06/01/12/1947227&amp;from=rss" />
+        <rdf:li rdf:resource="http://hardware.slashdot.org/article.pl?sid=06/01/12/1727210&amp;from=rss" />
+        <rdf:li rdf:resource="http://apple.slashdot.org/article.pl?sid=06/01/12/1720258&amp;from=rss" />
+        <rdf:li rdf:resource="http://it.slashdot.org/article.pl?sid=06/01/12/1556232&amp;from=rss" />
+        <rdf:li rdf:resource="http://science.slashdot.org/article.pl?sid=06/01/12/1656250&amp;from=rss" />
+        <rdf:li rdf:resource="http://apple.slashdot.org/article.pl?sid=06/01/12/1525238&amp;from=rss" />
+        <rdf:li rdf:resource="http://apple.slashdot.org/article.pl?sid=06/01/12/1513223&amp;from=rss" />
+        <rdf:li rdf:resource="http://it.slashdot.org/article.pl?sid=06/01/12/158224&amp;from=rss" />
+        <rdf:li rdf:resource="http://apple.slashdot.org/article.pl?sid=06/01/12/1319225&amp;from=rss" />
+        <rdf:li rdf:resource="http://it.slashdot.org/article.pl?sid=06/01/12/1312227&amp;from=rss" />
+      </rdf:Seq>
+    </items>
+    <image rdf:resource="http://images.slashdot.org/topics/topicslashdot.gif" />
+    <textinput rdf:resource="http://slashdot.org/search.pl" />
+  </channel>
+  <image rdf:about="http://images.slashdot.org/topics/topicslashdot.gif">
+    <title>Slashdot</title>
+    <url>http://images.slashdot.org/topics/topicslashdot.gif</url>
+    <link>http://slashdot.org/</link>
+  </image>
+  <item rdf:about="http://it.slashdot.org/article.pl?sid=06/01/12/1947227&amp;from=rss">
+    <title>"St Lawrence of Google"</title>
+    <link>http://rss.slashdot.org/Slashdot/slashdot?m=3039</link>
+    <description>mcho writes "The Economist has a story about Google's co-founder, Larry Page, who " always wanted to change the world". The article attempts to make an arguement about the company's true intentions, amid all the rumors about potential Google products. "Google is already working on a massive and global computing grid. Eventually, says Mr Saffo, 'they're trying to build the machine that will pass the Turing test' -- in other words, an artificial intelligence that can pass as a human in written conversations. Wisely or not, Google wants to be a new sort of deus ex machina.""&lt;img src="http://rss.slashdot.org/Slashdot/slashdot?g=3039"/&gt;</description>
+    <dc:creator>CmdrTaco</dc:creator>
+    <dc:date>2006-01-12T20:30:00+00:00</dc:date>
+    <dc:subject>google</dc:subject>
+    <slash:department>genius-at-work</slash:department>
+    <slash:section>it</slash:section>
+    <slash:comments>81</slash:comments>
+    <slash:hit_parade>81,78,63,36,12,5,3</slash:hit_parade>
+    <feedburner:origLink>http://it.slashdot.org/article.pl?sid=06/01/12/1947227&amp;from=rss</feedburner:origLink>
+  </item>
+  <item rdf:about="http://hardware.slashdot.org/article.pl?sid=06/01/12/1727210&amp;from=rss">
+    <title>The World's Tiniest Power Supply Unit</title>
+    <link>http://rss.slashdot.org/Slashdot/slashdot?m=3038</link>
+    <description>An anonymous reader writes "This year at CES members of the press got to grab a glimpse of the world's tiniest power supply. Well actually it is the world's tiniest 12V snap-in ATX DC-to-DC power supply, but you get the idea. This unit produces 120W of power and is about the size of two AA batteries. It is specifically designed for use with Mini-ITX motherboards, but can be used in many other applications."&lt;img src="http://rss.slashdot.org/Slashdot/slashdot?g=3038"/&gt;</description>
+    <dc:creator>CmdrTaco</dc:creator>
+    <dc:date>2006-01-12T19:44:00+00:00</dc:date>
+    <dc:subject>power</dc:subject>
+    <slash:department>case-modders-rejoice</slash:department>
+    <slash:section>hardware</slash:section>
+    <slash:comments>97</slash:comments>
+    <slash:hit_parade>97,90,74,47,11,5,2</slash:hit_parade>
+    <feedburner:origLink>http://hardware.slashdot.org/article.pl?sid=06/01/12/1727210&amp;from=rss</feedburner:origLink>
+  </item>
+  <item rdf:about="http://apple.slashdot.org/article.pl?sid=06/01/12/1720258&amp;from=rss">
+    <title>The Media's Crush on Apple</title>
+    <link>http://rss.slashdot.org/Slashdot/slashdot?m=3037</link>
+    <description>conq writes "BusinessWeek reports: "It's the first time in my memory that a product announcement by Steve Jobs has caused the AP to send an alert -- especially since this development was fully expected. And it says a lot about the intensity of media attention Apple generates. When is the last time a NewsAlert went out based on the words of Michael Dell or Bill Gates? Clearly, the AP's editors determined this news was important enough to warrant such action."
+&lt;p&gt;&lt;a href="http://rss.slashdot.org/~c/Slashdot/slashdot?a=GmOcVl"&gt;&lt;img src="http://rss.slashdot.org/~c/Slashdot/slashdot?i=GmOcVl" border="0"&gt;&lt;/img&gt;&lt;/a&gt;&lt;/p&gt;&lt;img src="http://rss.slashdot.org/Slashdot/slashdot?g=3037"/&gt;</description>
+    <dc:creator>CmdrTaco</dc:creator>
+    <dc:date>2006-01-12T19:00:00+00:00</dc:date>
+    <dc:subject>media</dc:subject>
+    <slash:department>well-their-laptops-are-very-shiny</slash:department>
+    <slash:section>apple</slash:section>
+    <slash:comments>225</slash:comments>
+    <slash:hit_parade>225,218,169,117,46,27,16</slash:hit_parade>
+    <feedburner:origLink>http://apple.slashdot.org/article.pl?sid=06/01/12/1720258&amp;from=rss</feedburner:origLink>
+  </item>
+  <item rdf:about="http://it.slashdot.org/article.pl?sid=06/01/12/1556232&amp;from=rss">
+    <title>'The IT Crowd' UK Sit-com</title>
+    <link>http://rss.slashdot.org/Slashdot/slashdot?m=3036</link>
+    <description>Nigsy writes "The Register reports that "A new sitcom - set among IT workers in the dingy basement of a glamorous company - is due to arrive on the UK's Channel 4 next month. The IT Crowd, written by Graham Linehan (the scribe behind Father Ted, Black Books), will debut on the internet on 27 January, a week before its terrestrial broadcast on Friday, 3 February at 9.30pm."" Here's hoping that they have a consultant on the show to make it technically accurate.&lt;img src="http://rss.slashdot.org/Slashdot/slashdot?g=3036"/&gt;</description>
+    <dc:creator>CmdrTaco</dc:creator>
+    <dc:date>2006-01-12T18:21:00+00:00</dc:date>
+    <dc:subject>tv</dc:subject>
+    <slash:department>waiting-for-the-torrent</slash:department>
+    <slash:section>it</slash:section>
+    <slash:comments>146</slash:comments>
+    <slash:hit_parade>146,143,116,75,19,10,6</slash:hit_parade>
+    <feedburner:origLink>http://it.slashdot.org/article.pl?sid=06/01/12/1556232&amp;from=rss</feedburner:origLink>
+  </item>
+  <item rdf:about="http://science.slashdot.org/article.pl?sid=06/01/12/1656250&amp;from=rss">
+    <title>Taiwan Breeds Transgenic, Fluorescent Green Pigs</title>
+    <link>http://rss.slashdot.org/Slashdot/slashdot?m=3035</link>
+    <description>ScentCone writes "Transgenic pigs (and other critters) are valuable research tools because of their utility in studying human diseases. Tracking changes in some developing tissues is going to be easier, say a Taiwanese team that has introduced fluorescent, green proteins into the breeding. Said one of the researchers: 'There are partially fluorescent green pigs elsewhere, but ours are the only ones in the world that are green from inside out. Even their hearts and internal organs are green.' Do you like green eggs and ham?"&lt;img src="http://rss.slashdot.org/Slashdot/slashdot?g=3035"/&gt;</description>
+    <dc:creator>Zonk</dc:creator>
+    <dc:date>2006-01-12T17:46:00+00:00</dc:date>
+    <dc:subject>biotech</dc:subject>
+    <slash:department>because-your-day-wasn't-distopean-enough</slash:department>
+    <slash:section>science</slash:section>
+    <slash:comments>187</slash:comments>
+    <slash:hit_parade>187,183,151,103,32,16,7</slash:hit_parade>
+    <feedburner:origLink>http://science.slashdot.org/article.pl?sid=06/01/12/1656250&amp;from=rss</feedburner:origLink>
+  </item>
+  <item rdf:about="http://apple.slashdot.org/article.pl?sid=06/01/12/1525238&amp;from=rss">
+    <title>Windows on Intel Macs - Yes or No?</title>
+    <link>http://rss.slashdot.org/Slashdot/slashdot?m=3034</link>
+    <description>With the announcement of the Intel chip based MacBook, the door is now open for running the Windows OS on Macintosh hardware, right? jaypatrick writes "BetaNews reports that along with the announcement of the first Intel based Macs yesterday, many users have rejoiced in being able to dual-boot both Mac OS X and Windows. Unfortunately, this is not the case; due to Apple's use of the extensible firmware interface (EFI) rather than BIOS, current Windows releases will not run on the systems." I guess not. But, wait... Big Z writes "Phil Schiller, Apple's senior vice-president of worldwide product marketing, said in an interview Tuesday that the company won't sell or support Windows itself, but also hasn't done anything to preclude people from loading Windows onto the machines themselves." I think someone actually trying it out is the only way this is going to get straightened out.&lt;img src="http://rss.slashdot.org/Slashdot/slashdot?g=3034"/&gt;</description>
+    <dc:creator>Zonk</dc:creator>
+    <dc:date>2006-01-12T17:09:00+00:00</dc:date>
+    <dc:subject>microsoft</dc:subject>
+    <slash:department>will-they-or-won't-they</slash:department>
+    <slash:section>apple</slash:section>
+    <slash:comments>456</slash:comments>
+    <slash:hit_parade>456,451,394,266,49,23,18</slash:hit_parade>
+    <feedburner:origLink>http://apple.slashdot.org/article.pl?sid=06/01/12/1525238&amp;from=rss</feedburner:origLink>
+  </item>
+  <item rdf:about="http://apple.slashdot.org/article.pl?sid=06/01/12/1513223&amp;from=rss">
+    <title>Apple Responds to iTunes Spying Allegations</title>
+    <link>http://rss.slashdot.org/Slashdot/slashdot?m=3033</link>
+    <description>daveschroeder writes "According to MacWorld and BoingBoing: 'An Apple spokesman (reliable word has it that it was Steve Jobs himself) told MacWorld that Apple discards the personal information that the iTunes Ministore transmits to Apple while you use iTunes. [...] Apple tells us that the information is not actually being collected. The data sent is used to update the MiniStore and then discarded.' Apple also has a knowledge base article, which apparently was available the day iTunes 6.0.2 was introduced, explaining the MiniStore behavior and how to disable it: 'iTunes sends data about the song selected in your library to the iTunes Music Store to provide relevant recommendations. When the MiniStore is hidden, this data is not sent to the iTunes Music Store.'" The discussion about this topic was fast and furious yesterday.&lt;img src="http://rss.slashdot.org/Slashdot/slashdot?g=3033"/&gt;</description>
+    <dc:creator>Zonk</dc:creator>
+    <dc:date>2006-01-12T16:22:00+00:00</dc:date>
+    <dc:subject>media</dc:subject>
+    <slash:department>harmless-fruit</slash:department>
+    <slash:section>apple</slash:section>
+    <slash:comments>305</slash:comments>
+    <slash:hit_parade>305,295,247,176,40,23,18</slash:hit_parade>
+    <feedburner:origLink>http://apple.slashdot.org/article.pl?sid=06/01/12/1513223&amp;from=rss</feedburner:origLink>
+  </item>
+  <item rdf:about="http://it.slashdot.org/article.pl?sid=06/01/12/158224&amp;from=rss">
+    <title>Lawmakers Try to Protect Kids From Spam</title>
+    <link>http://rss.slashdot.org/Slashdot/slashdot?m=3032</link>
+    <description>Carl Bialik from the WSJ writes "Some states have moved to shield children from email peddling porn, alcohol and other adults-only products, the Wall Street Journal reports. Critics say the laws, which establish a registry of kids' email addresses, are unfair to marketers and could create security risks. The debate echoes earlier discussion about a proposed do-not-spam national registry that the Can-Spam Law urged, but which the FTC nixed. This time, though, the registries are moving forward on a state-by-state basis, and facing court challenges from the adult entertainment industry." From the article: "Few email addresses have been placed on the state registries so far. Earlier this week, Utah's registry had 1,992 addresses, and 62 schools had registered their domain names to block emails to student accounts. About 160 companies had submitted their email lists for screening. In Michigan, 3,658 email addresses have been registered, along with 41 school domains. About 170 marketers had applied for screening."&lt;img src="http://rss.slashdot.org/Slashdot/slashdot?g=3032"/&gt;</description>
+    <dc:creator>Zonk</dc:creator>
+    <dc:date>2006-01-12T15:47:00+00:00</dc:date>
+    <dc:subject>spam</dc:subject>
+    <slash:department>dodge-the-pig</slash:department>
+    <slash:section>it</slash:section>
+    <slash:comments>274</slash:comments>
+    <slash:hit_parade>274,270,233,159,31,17,8</slash:hit_parade>
+    <feedburner:origLink>http://it.slashdot.org/article.pl?sid=06/01/12/158224&amp;from=rss</feedburner:origLink>
+  </item>
+  <item rdf:about="http://apple.slashdot.org/article.pl?sid=06/01/12/1319225&amp;from=rss">
+    <title>Sun and Apple Could Have Merged</title>
+    <link>http://rss.slashdot.org/Slashdot/slashdot?m=3031</link>
+    <description>Firmafest writes "The Register is running a story about Sun and Apple almost merging on three separate occasions. The information was revealed at a Computer History Museum event, where Sun's four co-founders spoke about the history of the Sun company. Bill Joy said that the two comp anies almost teamed on three different projects, including sharing a user interface and the SPARC architecture." From the article: "'As far as I know we also almost bought Apple once,' Joy said. 'We almost merged with Apple two other times.' Many Silicon Valley observers have long seen links between Sun and Apple. Both companies make slick, pricey hardware and are counter-punchers in their respective markets. They also have charismatic CEO figures and strong anti-Microsoft streaks"
+&lt;p&gt;&lt;a href="http://rss.slashdot.org/~c/Slashdot/slashdot?a=DcIryu"&gt;&lt;img src="http://rss.slashdot.org/~c/Slashdot/slashdot?i=DcIryu" border="0"&gt;&lt;/img&gt;&lt;/a&gt;&lt;/p&gt;&lt;img src="http://rss.slashdot.org/Slashdot/slashdot?g=3031"/&gt;</description>
+    <dc:creator>Zonk</dc:creator>
+    <dc:date>2006-01-12T15:04:00+00:00</dc:date>
+    <dc:subject>sun</dc:subject>
+    <slash:department>getting-friendly</slash:department>
+    <slash:section>apple</slash:section>
+    <slash:comments>220</slash:comments>
+    <slash:hit_parade>220,215,188,137,38,20,13</slash:hit_parade>
+    <feedburner:origLink>http://apple.slashdot.org/article.pl?sid=06/01/12/1319225&amp;from=rss</feedburner:origLink>
+  </item>
+  <item rdf:about="http://it.slashdot.org/article.pl?sid=06/01/12/1312227&amp;from=rss">
+    <title>Rootkit-like Feature Found in Norton Systemworks</title>
+    <link>http://rss.slashdot.org/Slashdot/slashdot?m=3030</link>
+    <description>GenieGenieGenie writes "eWeek reports a rootkit-like 'feature' in Symantec's Norton Systemworks, discovered by the Mark Russinovich, who was also responsible for blowing the whistle on Sony's DRM rootkit. The cloaked directory is intended to prevent users from accidentally deleting important files, but could compromise a system by serving as a hiding place for malware, as was the case with Sony's rootkit. Russinovich says Symantec had good intentions, but they were right to post an update to fix this hole."&lt;img src="http://rss.slashdot.org/Slashdot/slashdot?g=3030"/&gt;</description>
+    <dc:creator>Zonk</dc:creator>
+    <dc:date>2006-01-12T14:26:00+00:00</dc:date>
+    <dc:subject>security</dc:subject>
+    <slash:department>i'm-helping-i'm-helping</slash:department>
+    <slash:section>it</slash:section>
+    <slash:comments>174</slash:comments>
+    <slash:hit_parade>174,165,139,100,34,20,13</slash:hit_parade>
+    <feedburner:origLink>http://it.slashdot.org/article.pl?sid=06/01/12/1312227&amp;from=rss</feedburner:origLink>
+  </item>
+  <textinput rdf:about="http://slashdot.org/search.pl">
+    <title>Search Slashdot</title>
+    <description>Search Slashdot stories</description>
+    <name>query</name>
+    <link>http://slashdot.org/search.pl</link>
+  </textinput>
+</rdf:RDF>
+

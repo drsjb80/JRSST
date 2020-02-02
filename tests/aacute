@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<rss version="2.0">
+<channel>
+<title>
+    <![CDATA[All Local News]]>
+</title>
+<link>
+    <![CDATA[http://www.denverpost.com]]>
+</link>
+<description/>
+<language>
+    <![CDATA[en]]>
+</language>
+<category domain="Media News Group">
+    <![CDATA[News]]>
+</category>
+<ttl>15</ttl>
+<item>
+<title>
+    <![CDATA[Ch&aacute;vez march spreading focus]]>
+</title>
+<link>
+    <![CDATA[http://www.denverpost.com/ci_5500327?source=rss]]>
+</link>
+<description>
+    <![CDATA[For the first time, organizers of Denver's C&eacute;sar
+    Ch&aacute;vez annual memorial march are partnering with two other groups to
+    honor the memory of Ch&aacute;vez by promoting immigrant rights and
+    comprehensive reform and by supporting Chicano student activists.]]>
+</description>
+<category domain="Media News Group">
+    <![CDATA[/News/Local]]>
+</category>
+<author>
+    <![CDATA[eaguilera@denverpost.com (Elizabeth Aguilera)]]>
+</author>
+<pubDate>
+    <![CDATA[Fri, 23 Mar 2007 01:16:10 -0600]]>
+</pubDate>
+</item>
+</channel>
+</rss>

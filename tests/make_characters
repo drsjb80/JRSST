@@ -1,0 +1,35 @@
+#! /bin/bash
+
+#127 -- 160
+
+cat - << HEAD > characters
+<?xml version="1.0" encoding="iso-8859-1"?>
+<rss version="0.91">
+    <channel>
+        <title>one liner</title>
+        <link>http://www.pipes.org/</link>
+        <description>oneliner</description>
+        <item>
+            <title>
+HEAD
+
+start=128
+end=160
+while [[ $start -le $end ]]
+do
+    echo "$start: &#$start; " >> characters
+    mod=$(($start % 10))
+    # if [[ $mod -eq 0 ]]
+    # then
+        # echo "<br></br>" >> characters
+    # fi
+    start=$((start+1))
+done
+
+cat - << TAIL >> characters
+	    </title>
+            <link>http://www.pipes.org/</link>
+        </item>
+    </channel>
+</rss>
+TAIL

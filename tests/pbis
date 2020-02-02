@@ -1,0 +1,13 @@
+
+<?xml version="1.0" encoding="iso-8859-1"?>
+<rss version="0.91">
+    <channel>
+        <title>one liner</title>
+        <link>http://www.pipes.org/</link>
+        <description>oneliner</description>
+        <item>
+            <title>one liner</title>
+            <link>http://www.pipes.org/</link>
+        </item>
+    </channel>
+</rss>
