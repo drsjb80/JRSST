@@ -43,12 +43,12 @@ public class JRSST extends JFrame {
     JRSST(JRSSTLabel label) {
         super("JRSST");
 
-        setUndecorated(jrsstargs.undecorated());
-        setResizable(jrsstargs.resizable());
+        setUndecorated(jrsstargs.undecorated);
+        setResizable(jrsstargs.resizable);
         setIconImage(new ImageIcon(new Icon().getIcon()).getImage());
 
         // thanks to Zoe Gagnon
-        if (jrsstargs.do_nothing_on_close())
+        if (jrsstargs.do_nothing_on_close)
             setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         else
             setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -66,7 +66,7 @@ public class JRSST extends JFrame {
 
         jrsstargs = label.getconfig().getJRSSTArgs();
 
-        if (jrsstargs.help()) {
+        if (jrsstargs.help) {
             System.out.println("Usage: " + new JCLO(jrsstargs).usage());
             System.exit(0);
         }

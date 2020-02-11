@@ -1281,5 +1281,5 @@ public class Icon
     }
     ;
 
-    public byte[] getIcon() { return (icon); }
+    public byte[] getIcon() { return (icon.clone()); }
 }

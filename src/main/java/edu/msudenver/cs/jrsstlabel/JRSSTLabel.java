@@ -25,7 +25,7 @@ public class JRSSTLabel extends JLabel implements MouseListener {
     private JFrame frame = null;
     private int current;
     private JRSSTConfig config;
-    private String[] args;
+    private final String[] args;
     private long start;
     private String retrieved;
 
@@ -39,7 +39,7 @@ public class JRSSTLabel extends JLabel implements MouseListener {
         this.frame = frame;
     }
 
-    public JRSSTLabel(String[] args) {
+    public JRSSTLabel(final String[] args) {
         super();
 
         this.args = args;
@@ -83,7 +83,7 @@ public class JRSSTLabel extends JLabel implements MouseListener {
     }
 
     public final void mouseClicked(final MouseEvent me) {
-        RSSItem rssitem = (RSSItem) config.getRSSItems().elementAt(current);
+        RSSItem rssitem = config.getRSSItems().elementAt(current);
         try {
             Desktop.getDesktop().browse(java.net.URI.create(rssitem.getLink()));
         } catch (IOException e) {
@@ -98,15 +98,15 @@ public class JRSSTLabel extends JLabel implements MouseListener {
         // System.out.println ("d.width = " + d.width);
         // System.out.println ("d.height = " + d.height);
 
-        int x = config.jrsstargs.x();
-        int y = config.jrsstargs.y();
+        int x = config.jrsstargs.x;
+        int y = config.jrsstargs.y;
 
-        if (config.jrsstargs.upperright()) {
+        if (config.jrsstargs.upperright) {
             x = d.width - f.width;
-        } else if (config.jrsstargs.lowerright()) {
+        } else if (config.jrsstargs.lowerright) {
             x = d.width - f.width;
             y = d.height - f.height;
-        } else if (config.jrsstargs.lowerleft()) {
+        } else if (config.jrsstargs.lowerleft) {
             y = d.height - f.height;
         }
 
@@ -185,8 +185,7 @@ public class JRSSTLabel extends JLabel implements MouseListener {
                 logger.debug(size);
             }
 
-            RSSItem rssitem =
-                    (RSSItem) config.getRSSItems().elementAt(current);
+            RSSItem rssitem = config.getRSSItems().elementAt(current);
 
             String s = rssitem.getChannel();
 
@@ -254,10 +253,6 @@ public class JRSSTLabel extends JLabel implements MouseListener {
             }
 
             loop(retrieved);
-
-            logger.debug(Runtime.getRuntime().totalMemory());
-            Runtime.getRuntime().gc();
-            logger.debug(Runtime.getRuntime().totalMemory());
 
             if (config.jrsstargs._1)
                 System.exit(0);
