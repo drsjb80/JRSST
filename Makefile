@@ -11,7 +11,7 @@ JAVALN	= edu/mscd/cs/javaln
 BBBL	= com/centerkey/utils
 BIN	= bin
 
-SOURCES	= Icon.java JRSST.java
+SOURCES	= edu.msudenver.cs.jrsstlabel.Icon.java JRSST.java
 CLASSES = $(SOURCES:.java=.class)
 
 VERSION	= $(shell cat $(LABEL)/VERSION)
