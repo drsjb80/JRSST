@@ -91,7 +91,7 @@ public class JRSSTConfig {
     }
 
     public JRSSTConfig(String[] args, JRSSTLabel label) {
-        RSSItems = new Vector<RSSItem>();
+        RSSItems = new Vector<>();
 
         try {
             new JCLO(jrsstargs).parse(args);
@@ -105,88 +105,77 @@ public class JRSSTConfig {
             System.exit(0);
         }
 
-        boolean userInit = false;
+        boolean userInit = dotJRSST() || userInits() || OPMLInits() || additionals();
 
+        dealWithFonts(label);
+
+        if (!userInit) {
+			String defaultURL = "https://feeds.bbci.co.uk/news/rss.xml";
+			if (jrsstargs.verbose)
+                logger.info("Reading " + defaultURL);
+			// only one, no need for a thread
+			new ParseRSS(defaultURL, RSSItems, jrsstargs.fix_html).run();
+		}
+
+        logger.trace("size = " + RSSItems.size());
+    }
+
+    private boolean additionals() {
+        boolean good = false;
+        for (String s : jrsstargs.additional) {
+            good = true;
+            ParseRSS prss = new ParseRSS(s, RSSItems, jrsstargs.fix_html);
+            if (jrsstargs.quick_init) {
+                new Thread(prss).start();
+            } else {
+                prss.run();
+            }
+        }
+        return good;
+    }
+
+    private boolean OPMLInits() {
+        boolean good = false;
+        for (String s : jrsstargs.opml) {
+            try {
+                readConfig(s, true);
+                good = true;
+            } catch (IOException ioe) {
+                logger.warn(ioe);
+            }
+        }
+            return good;
+    }
+
+    private boolean userInits() {
+        boolean good = false;
+        for (String s : jrsstargs.init) {
+            try {
+                readConfig(s, false);
+                good = true;
+            } catch (IOException ioe) {
+                logger.warn(ioe);
+            }
+        }
+        return good;
+    }
+
+    private boolean dotJRSST() {
         String homedir = System.getProperty("user.home");
         if (homedir != null) {
             String sep = System.getProperty("file.separator");
             String file = "file:" + homedir + sep + ".jrsst";
 
             try {
-                if (jrsstargs.verbose)
+                if (jrsstargs.verbose) {
                     logger.info("Reading " + file);
-                readConfig(file, false);
-                userInit = true;
-			} catch (IOException ioe) {
-                logger.throwing(ioe);
-            }
-        }
-
-        String[] init = jrsstargs.init;
-        if (init != null) {
-            userInit = true;
-
-			for (String s : init) {
-				try {
-					readConfig(s, false);
-				} catch (IOException ioe) {
-					logger.warn(ioe);
-				}
-			}
-        }
-
-        String[] opml = jrsstargs.opml;
-        if (opml != null) {
-            userInit = true;
-
-			for (String s : opml) {
-				try {
-					readConfig(s, true);
-				} catch (IOException ioe) {
-					logger.warn(ioe);
-				}
-			}
-        }
-
-        dealWithFonts(label);
-
-        String[] additional = jrsstargs.additional;
-        if (additional != null) {
-            userInit = true;
-
-			for (String s : additional) {
-				if (jrsstargs.verbose)
-					logger.info("Reading " + s);
-
-				ParseRSS prss = new ParseRSS(s, RSSItems,
-						jrsstargs.fix_html);
-				if (jrsstargs.quick_init) {
-					new Thread(prss).start();
-				} else {
-					prss.run();
-				}
-
-			}
-
-            try {
-                logger.trace("Waiting...");
-                synchronized (RSSItems) {
-                    RSSItems.wait(60000); // wait a minute!
                 }
-                logger.trace("Done...");
-            } catch (java.lang.InterruptedException IE) {
-                logger.throwing(IE);
+                readConfig(file, false);
+                return true;
+			} catch (IOException ioe) {
+                logger.debug(ioe);
             }
         }
-
-        if (!userInit) {
-			String defaultURL = "http://feeds.bbci.co.uk/news/rss.xml";
-			if (jrsstargs.verbose)
-                logger.info("Reading " + defaultURL);
-			// only one, no need for a thread
-			ParseRSS prss = new ParseRSS(defaultURL, RSSItems, jrsstargs.fix_html);
-		}
-
-        logger.trace("size = " + RSSItems.size());
+        return false;
     }
 }

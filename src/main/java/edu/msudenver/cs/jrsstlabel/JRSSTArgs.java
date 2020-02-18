@@ -1,8 +1,8 @@
 package edu.msudenver.cs.jrsstlabel;
 
 public class JRSSTArgs {
-    String init[];
-    String opml[];
+    String init[] = new String[0];
+    String opml[] = new String[0];
     int pause = 10;
     boolean verbose = false;
     boolean version = false;
@@ -23,5 +23,5 @@ public class JRSSTArgs {
     String font__size;
     String font__style;
     boolean _1 = false;
-    String additional[];
+    String additional[] = new String[0];
 }

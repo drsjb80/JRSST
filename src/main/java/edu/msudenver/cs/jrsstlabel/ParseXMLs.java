@@ -44,8 +44,9 @@ class ParseXMLs {
 
             InputSource IS = new InputSource(pbis);
 
-            if (is != null)
+            if (is != null) {
                 SAXParserFactory.newInstance().newSAXParser().parse(IS, dh);
+            }
 
             pbis.close();
             assert is != null;
@@ -148,6 +149,7 @@ class ParseRSS extends DefaultHandler implements Runnable {
     }
 
     public void run() {
+        logger.traceEntry();
         try {
             new ParseXMLs(s, this, fixhtml);
         } catch (FileNotFoundException FNFE) {
