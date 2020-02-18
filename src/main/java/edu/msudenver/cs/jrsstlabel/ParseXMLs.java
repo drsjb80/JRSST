@@ -55,9 +55,10 @@ class ParseXMLs {
             logger.warn ("In " + s + ", at line " + spe.getLineNumber() +
                     ", column " + spe.getColumnNumber() + ", " + spe);
         } catch (FileNotFoundException fnfe) {
+            logger.warn(fnfe);
             throw (fnfe);
         } catch (ParserConfigurationException | SAXException | IOException pce) {
-            logger.throwing(pce);
+            logger.warn(pce);
         }
     }
 }
@@ -153,7 +154,7 @@ class ParseRSS extends DefaultHandler implements Runnable {
         try {
             new ParseXMLs(s, this, fixhtml);
         } catch (FileNotFoundException FNFE) {
-            logger.throwing(FNFE);
+            logger.info("Unable to open " + s);
         }
 
         synchronized (RSSItems) {

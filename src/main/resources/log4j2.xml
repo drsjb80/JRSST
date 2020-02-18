@@ -6,12 +6,8 @@
     </Console>
   </Appenders>
   <Loggers>
-    <Root level="error">
+    <Root level="warn">
       <AppenderRef ref="Console"/>
     </Root>
-    <Logger
-        name="edu.msudenver.cs.jrsstlabel.ParseXMLs"
-        level="trace"
-        additivity="false"/>
   </Loggers>
 </Configuration>
