@@ -48,10 +48,11 @@ public class JRSST extends JFrame {
         setIconImage(new ImageIcon(new Icon().getIcon()).getImage());
 
         // thanks to Zoe Gagnon
-        if (jrsstargs.do_nothing_on_close)
+        if (jrsstargs.do_nothing_on_close) {
             setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-        else
+        } else {
             setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        }
 
         getContentPane().setLayout(new FlowLayout());
         getContentPane().add(label);
@@ -64,7 +65,7 @@ public class JRSST extends JFrame {
     public static void main(String[] args) {
         JRSSTLabel label = new JRSSTLabel(args);
 
-        jrsstargs = label.getconfig().getJRSSTArgs();
+        jrsstargs = label.config.jrsstargs;
 
         if (jrsstargs.help) {
             System.out.println("Usage: " + new JCLO(jrsstargs).usage());

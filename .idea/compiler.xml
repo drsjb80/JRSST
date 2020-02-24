@@ -9,6 +9,8 @@
         <module name="JRSST" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="9" />
+    <bytecodeTargetLevel target="9">
+      <module name="JRSST" target="1.9" />
+    </bytecodeTargetLevel>
   </component>
 </project>

@@ -23,17 +23,13 @@ OFF
 
 public class JRSSTLabel extends JLabel implements MouseListener {
     private JFrame frame = null;
-    private int current;
-    private JRSSTConfig config;
+    private RSSItem current;
+    JRSSTConfig config;
     private final String[] args;
     private long start;
     private String retrieved;
 
     static final Logger logger = getLogger("JRSST");
-
-    public JRSSTConfig getconfig() {
-        return (config);
-    }
 
     public final void setFrame(final JFrame frame) {
         this.frame = frame;
@@ -44,7 +40,7 @@ public class JRSSTLabel extends JLabel implements MouseListener {
 
         this.args = args;
 
-        Date d = new Date();
+        final Date d = new Date();
         start = d.getTime();
         retrieved = d.toString();
 
@@ -83,17 +79,16 @@ public class JRSSTLabel extends JLabel implements MouseListener {
     }
 
     public final void mouseClicked(final MouseEvent me) {
-        RSSItem rssitem = config.getRSSItems().elementAt(current);
         try {
-            Desktop.getDesktop().browse(java.net.URI.create(rssitem.getLink()));
+            Desktop.getDesktop().browse(java.net.URI.create(current.getLink()));
         } catch (IOException e) {
             logger.throwing(e);
         }
     }
 
     private void setPosition() {
-        Dimension f = frame.getSize();
-        Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
+        final Dimension f = frame.getSize();
+        final Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
 
         // System.out.println ("d.width = " + d.width);
         // System.out.println ("d.height = " + d.height);
@@ -121,13 +116,13 @@ public class JRSSTLabel extends JLabel implements MouseListener {
      *  @author Steve Beaty
      *  @param  s -- the string to be displayed
      */
-    void display(String s) {
+    void display(final String s) {
         logger.traceEntry(s);
         logger.trace(this.toString());
 
         // before we change things
-        Point prevLoc = frame.getLocation();
-        Dimension prevDim = frame.getSize();
+        final Point prevLoc = frame.getLocation();
+        final Dimension prevDim = frame.getSize();
 
         setText(s == null ? "NO TITLE" : s);
 
@@ -175,17 +170,11 @@ public class JRSSTLabel extends JLabel implements MouseListener {
      *
      *  @author Steve Beaty
      */
-    private void loop(String retrieved) {
+    private void loop(final String retrieved) {
         String channel = "";
-        int size = 0;
 
-        for (current = 0; current < config.getRSSItems().size(); current++) {
-            if (size != config.getRSSItems().size()) {
-                size = config.getRSSItems().size();
-                logger.debug(size);
-            }
-
-            RSSItem rssitem = config.getRSSItems().elementAt(current);
+        for (RSSItem rssitem: config.RSSItems) {
+            current = rssitem;
 
             String s = rssitem.getChannel();
 
@@ -194,17 +183,19 @@ public class JRSSTLabel extends JLabel implements MouseListener {
             if (s != null && !s.equals(channel)) {
                 channel = s;
 
-                if (frame != null)
+                if (frame != null) {
                     frame.setTitle(s);
+                }
 
                 // BufferedImage imageIcon = rssitem.getImageIcon();
                 ImageIcon imageIcon = rssitem.getImageIcon();
 
                 if (imageIcon != null) {
-                    if (getHeight() != 0)
+                    if (getHeight() != 0) {
                         setIcon(new ImageIcon(imageIcon.getImage().
                                 getScaledInstance(-1, getHeight(),
                                         Image.SCALE_SMOOTH)));
+                    }
                 } else {
                     setIcon(null);
                 }
@@ -231,13 +222,13 @@ public class JRSSTLabel extends JLabel implements MouseListener {
             long now = d.getTime();
 
             if (now > (start + (1000 * 60 * 30)) ||
-                    config.getRSSItems().size() == 0) {
+                    config.RSSItems.size() == 0) {
                 start = now;
                 retrieved = d.toString();
                 config = new JRSSTConfig(args, this);
             }
 
-            if (config.getRSSItems().size() == 0) {
+            if (config.RSSItems.size() == 0) {
                 display("No RSS items found, sleeping for five minutes...");
                 setIcon(null);
 

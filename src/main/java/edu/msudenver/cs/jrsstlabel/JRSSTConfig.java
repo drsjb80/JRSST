@@ -12,16 +12,8 @@ import static org.apache.logging.log4j.LogManager.getLogger;
 
 public class JRSSTConfig {
     static final Logger logger = getLogger("JRSST");
-    JRSSTArgs jrsstargs = new JRSSTArgs();
-    private final Vector<RSSItem> RSSItems;
-
-	Vector<RSSItem> getRSSItems() {
-        return (RSSItems);
-    }
-
-    JRSSTArgs getJRSSTArgs() {
-        return (jrsstargs);
-    }
+    final JRSSTArgs jrsstargs = new JRSSTArgs();
+    final Vector<RSSItem> RSSItems;
 
 	private void readConfig(String where, boolean OPML)
             throws FileNotFoundException {
@@ -30,12 +22,12 @@ public class JRSSTConfig {
 
         logger.trace("Opening configuration file: \"" + where + "\"");
 
-        if (jrsstargs.verbose)
+        if (jrsstargs.verbose) {
             logger.info("Reading " + where);
+        }
 
-        Vector<String> urls;
-
-		urls = OPML ? new ParseOPML(where, jrsstargs.fix_html).getURLs() :
+        final Vector<String> urls = OPML ?
+                new ParseOPML(where, jrsstargs.fix_html).getURLs() :
 				new ParseOldConfig(where, jrsstargs.fix_html).getURLs();
 
 		logger.trace(urls);
@@ -61,26 +53,25 @@ public class JRSSTConfig {
         }
     }
 
-    private void dealWithFonts(JRSSTLabel label) {
+    private void dealWithFonts(final JRSSTLabel label) {
         logger.traceEntry();
 
-        Font font = label.getFont();
-        int size = font.getSize();
+        final Font font = label.getFont();
+        final int size = font.getSize();
         int style = font.getStyle();
 
-        String fontname = jrsstargs.font;
-        String fontsize = jrsstargs.font__size;
-        String fontstyle = jrsstargs.font__style;
-
+        final String fontname = jrsstargs.font;
         if (fontname != null) {
             label.setFont(new Font(fontname, style, size));
         }
 
+        final String fontsize = jrsstargs.font__size;
         if (fontsize != null) {
-            float fs = Float.parseFloat(fontsize);
+            final float fs = Float.parseFloat(fontsize);
             label.setFont(label.getFont().deriveFont(fs));
         }
 
+        final String fontstyle = jrsstargs.font__style;
         if (fontstyle != null) {
             if (fontstyle.equals("BOLD")) style = Font.BOLD;
             if (fontstyle.equals("ITALIC")) style = Font.ITALIC;
@@ -90,7 +81,7 @@ public class JRSSTConfig {
         }
     }
 
-    public JRSSTConfig(String[] args, JRSSTLabel label) {
+    public JRSSTConfig(final String[] args, final JRSSTLabel label) {
         RSSItems = new Vector<>();
 
         try {
@@ -161,10 +152,10 @@ public class JRSSTConfig {
     }
 
     private boolean dotJRSST() {
-        String homedir = System.getProperty("user.home");
+        final String homedir = System.getProperty("user.home");
         if (homedir != null) {
-            String sep = System.getProperty("file.separator");
-            String file = "file:" + homedir + sep + ".jrsst";
+            final String sep = System.getProperty("file.separator");
+            final String file = "file:" + homedir + sep + ".jrsst";
 
             try {
                 if (jrsstargs.verbose) {
