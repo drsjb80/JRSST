@@ -10,20 +10,13 @@ import java.net.URLConnection;
 
 import static org.apache.logging.log4j.LogManager.getLogger;
 
-/**
- * A class we'll use to collect all the items to diplay.
- *
- * @author Steve Beaty
- * @version 1.0
- */
-
 public class RSSItem {
-    private final String channel;
-    private final ImageIcon imageIcon;
-    private final String title;
-    private final String link;
-    private final String description;
-    private final String pubdate;
+    final String channel;
+    final ImageIcon imageIcon;
+    final String title;
+    final String link;
+    final String description;
+    final String pubdate;
     static final Logger logger = getLogger("JRSST");
 
     private String fixhtml(String s, boolean really_fix) {
@@ -107,11 +100,14 @@ public class RSSItem {
      * a very simple helper method
      */
     private String trimNotNull(String s) {
-        if (s != null) return (s.trim());
-        else return (null);
+        if (s != null) {
+            return (s.trim());
+        } else {
+            return (null);
+        }
     }
 
-    private ImageIcon getImageIcon(String url) {
+    private ImageIcon getImageIcon(final String url) {
         logger.traceEntry(url);
 
         if (url == null) {
@@ -161,38 +157,14 @@ public class RSSItem {
         return (imageIcon);
     }
 
-    public RSSItem(String channel, String title, String link,
-                   String description, String image, String pubdate, boolean really_fix) {
+    public RSSItem(final String channel, final String title, final String link,
+                   final String description, final String image, final String pubdate, final boolean really_fix) {
         this.channel = trimNotNull(fixhtml(channel, really_fix));
         this.imageIcon = getImageIcon(image);
         this.title = trimNotNull(fixhtml(title, really_fix));
         this.link = trimNotNull(fixhtml(link, really_fix));
         this.description = trimNotNull(fixhtml(description, really_fix));
         this.pubdate = trimNotNull(fixhtml(pubdate, really_fix));
-    }
-
-    public String getChannel() {
-        return (channel);
-    }
-
-    public ImageIcon getImageIcon() {
-        return (imageIcon);
-    }
-
-    public String getTitle() {
-        return (title);
-    }
-
-    public String getLink() {
-        return (link);
-    }
-
-    public String getDescription() {
-        return (description);
-    }
-
-    public String getPubDate() {
-        return (pubdate);
     }
 
     public String toString() {

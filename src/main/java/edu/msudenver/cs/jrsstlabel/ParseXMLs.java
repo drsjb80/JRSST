@@ -22,27 +22,27 @@ import static org.apache.logging.log4j.LogManager.getLogger;
 class ParseXMLs {
     static final Logger logger = getLogger("JRSST");
 
-    void skipBad(PushbackInputStream pbis, String s) throws IOException {
+    void skipBad(final PushbackInputStream pbis, final String s) throws IOException {
         int c;
         while ((c = pbis.read()) != '<') {
-            if (c == -1)
+            if (c == -1) {
                 throw (new IOException("Bad read from" + s));
+            }
             logger.trace("Eating: " + c);
         }
 
         pbis.unread(c);
     }
 
-    ParseXMLs(String s, DefaultHandler dh, boolean fixhtml)
-            throws FileNotFoundException {
+    ParseXMLs(final String s, final DefaultHandler dh, final boolean fixhtml) throws FileNotFoundException {
         try {
-            URL url = new URL(s);
-            InputStream is = url.openStream();
-            PushbackInputStream pbis = new PushbackInputStream(is);
+            final URL url = new URL(s);
+            final InputStream is = url.openStream();
+            final PushbackInputStream pbis = new PushbackInputStream(is);
 
             skipBad(pbis, s);
 
-            InputSource IS = new InputSource(pbis);
+            final InputSource IS = new InputSource(pbis);
 
             if (is != null) {
                 SAXParserFactory.newInstance().newSAXParser().parse(IS, dh);
@@ -55,7 +55,7 @@ class ParseXMLs {
             logger.warn ("In " + s + ", at line " + spe.getLineNumber() +
                     ", column " + spe.getColumnNumber() + ", " + spe);
         } catch (FileNotFoundException fnfe) {
-            logger.warn(fnfe);
+            logger.debug(fnfe);
             throw (fnfe);
         } catch (ParserConfigurationException | SAXException | IOException pce) {
             logger.warn(pce);
@@ -65,26 +65,19 @@ class ParseXMLs {
 
 class ParseOldConfig extends DefaultHandler {
     private String current;
-    private Vector<String> URLs = new Vector<>();
+    Vector<String> URLs = new Vector<>();
 
-    public ParseOldConfig(String s, boolean fixhtml)
-            throws FileNotFoundException {
+    public ParseOldConfig(final String s, final boolean fixhtml) throws FileNotFoundException {
         super();
         new ParseXMLs(s, this, fixhtml);
     }
 
-    public Vector<String> getURLs() {
-        return (URLs);
-    }
-
-    public void startElement(String uri, String localName, String qName, Attributes attributes)  {
-
+    public void startElement(final String uri, final String localName, final String qName, final Attributes attributes)  {
         if (qName.equals("url"))
             current = "";
     }
 
     public void endElement(String namespaceURI, String lName, String qName) {
-
         if (qName.equals("url"))
             URLs.add(current);
     }
@@ -95,20 +88,15 @@ class ParseOldConfig extends DefaultHandler {
 }
 
 class ParseOPML extends DefaultHandler {
-    private Vector<String> URLs = new Vector<>();
+    final Vector<String> URLs = new Vector<>();
     static final Logger logger = getLogger("JRSST");
 
-    public ParseOPML(String s, boolean fixhtml)
-            throws FileNotFoundException {
+    public ParseOPML(String s, boolean fixhtml) throws FileNotFoundException {
         super();
         new ParseXMLs(s, this, fixhtml);
     }
 
-    public Vector<String> getURLs() {
-        return (URLs);
-    }
-
-    public void startElement(String uri, String localName, String qName, Attributes attributes) {
+    public void startElement(final String uri, final String localName, final String qName, final Attributes attributes) {
         if (qName.equals("outline")) {
             String toAdd = attributes.getValue("xmlUrl");
             if (toAdd != null) {
@@ -123,8 +111,6 @@ class ParseOPML extends DefaultHandler {
 
 class ParseRSS extends DefaultHandler implements Runnable {
     private String current;
-    // private InputSource inputsource;
-    // private InputStream inputstream;
     private Stack<String> stack = new Stack<>();
     private final Vector<RSSItem> RSSItems;
     private Vector<RSSItem> LocalRSSItems = new Vector<>();
@@ -142,7 +128,7 @@ class ParseRSS extends DefaultHandler implements Runnable {
     private String s;
     private boolean fixhtml;
 
-    public ParseRSS(String s, Vector<RSSItem> RSSItems, boolean fixhtml) {
+    public ParseRSS(final String s, final Vector<RSSItem> RSSItems, final boolean fixhtml) {
         super();
         this.s = s;
         this.RSSItems = RSSItems;
@@ -163,8 +149,7 @@ class ParseRSS extends DefaultHandler implements Runnable {
         }
     }
 
-    public void startElement(String uri, String localName, String qName,
-                             Attributes attributes) {
+    public void startElement(final String uri, final String localName, final String qName, final Attributes attributes) {
         stack.push(qName);
         current = "";
         attrs = attributes;
@@ -184,10 +169,10 @@ class ParseRSS extends DefaultHandler implements Runnable {
         }
     }
 
-    public void endElement(String uri, String localName, String qName) {
+    public void endElement(final String uri, final String localName, final String qName) {
         stack.pop();
 
-        String enclosing = !stack.empty() ? stack.peek() : "";
+        final String enclosing = !stack.empty() ? stack.peek() : "";
 
         if (RSS1) {
             if (qName.equalsIgnoreCase("image") &&
@@ -270,7 +255,7 @@ class ParseRSS extends DefaultHandler implements Runnable {
         }
     }
 
-    public void characters(char[] buf, int offset, int len) {
+    public void characters(final char[] buf, final int offset, final int len) {
         current += new String(buf, offset, len);
     }
 }

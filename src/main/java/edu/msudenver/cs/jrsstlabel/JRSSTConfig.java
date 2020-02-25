@@ -26,9 +26,9 @@ public class JRSSTConfig {
             logger.info("Reading " + where);
         }
 
-        final Vector<String> urls = OPML ?
-                new ParseOPML(where, jrsstargs.fix_html).getURLs() :
-				new ParseOldConfig(where, jrsstargs.fix_html).getURLs();
+        final Vector<String> urls = OPML
+                ? new ParseOPML(where, jrsstargs.fix_html).URLs
+                : new ParseOldConfig(where, jrsstargs.fix_html).URLs;
 
 		logger.trace(urls);
 		for (String next: urls) {

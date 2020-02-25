@@ -80,7 +80,7 @@ public class JRSSTLabel extends JLabel implements MouseListener {
 
     public final void mouseClicked(final MouseEvent me) {
         try {
-            Desktop.getDesktop().browse(java.net.URI.create(current.getLink()));
+            Desktop.getDesktop().browse(java.net.URI.create(current.link));
         } catch (IOException e) {
             logger.throwing(e);
         }
@@ -109,13 +109,6 @@ public class JRSSTLabel extends JLabel implements MouseListener {
             frame.setLocation(x, y);
     }
 
-    /**
-     *  A method to call from lots of places to display a string in the
-     *
-     *  text field.
-     *  @author Steve Beaty
-     *  @param  s -- the string to be displayed
-     */
     void display(final String s) {
         logger.traceEntry(s);
         logger.trace(this.toString());
@@ -144,7 +137,7 @@ public class JRSSTLabel extends JLabel implements MouseListener {
         logger.traceEntry(rssitem.toString());
 
         String s = "<html><div align=\"center\">";
-        String t = rssitem.getDescription();
+        String t = rssitem.description;
 
         if (t != null) {
             s += WordWrap.wordWrap(t, 30).replaceAll("\n", "<br>");
@@ -153,10 +146,11 @@ public class JRSSTLabel extends JLabel implements MouseListener {
             s += "NO DESCRIPTION<br>";
         }
 
-        String u = rssitem.getPubDate();
+        final String u = rssitem.pubdate;
 
-        if (u != null)
+        if (u != null) {
             s += "Published: " + u + "<br>";
+        }
 
         s += "Retrieved: " + retrieved;
 
@@ -165,18 +159,13 @@ public class JRSSTLabel extends JLabel implements MouseListener {
         setToolTipText(s);
     }
 
-    /**
-     *  Loop through all of the RSS items.
-     *
-     *  @author Steve Beaty
-     */
     private void loop(final String retrieved) {
         String channel = "";
 
         for (RSSItem rssitem: config.RSSItems) {
             current = rssitem;
 
-            String s = rssitem.getChannel();
+            final String s = rssitem.channel;
 
             // is this a new channel to display?  if so, we need to change
             // the title and icon.
@@ -188,7 +177,7 @@ public class JRSSTLabel extends JLabel implements MouseListener {
                 }
 
                 // BufferedImage imageIcon = rssitem.getImageIcon();
-                ImageIcon imageIcon = rssitem.getImageIcon();
+                ImageIcon imageIcon = rssitem.imageIcon;
 
                 if (imageIcon != null) {
                     if (getHeight() != 0) {
@@ -201,7 +190,7 @@ public class JRSSTLabel extends JLabel implements MouseListener {
                 }
             }
 
-            display(rssitem.getTitle());
+            display(rssitem.title);
             setToolTip(retrieved, rssitem);
 
             try {
@@ -218,8 +207,8 @@ public class JRSSTLabel extends JLabel implements MouseListener {
 
     public final void doit() {
         while (true) {
-            Date d = new Date();
-            long now = d.getTime();
+            final Date d = new Date();
+            final long now = d.getTime();
 
             if (now > (start + (1000 * 60 * 30)) ||
                     config.RSSItems.size() == 0) {
